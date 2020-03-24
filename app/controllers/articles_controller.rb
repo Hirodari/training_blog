@@ -10,6 +10,12 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   def create
     @article = Article.new(article_params)
     if @article.save
@@ -18,13 +24,6 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def show
-  end
-
-  def edit
-
   end
 
   def update
