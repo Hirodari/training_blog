@@ -1,0 +1,10 @@
+<div class="container-sm" id="art_errors">
+  <% if @article.errors.any? %>
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-danger">Reasons of failure</li>
+      <% @article.errors.full_messages.each do |msg| %>
+      <li class="list-group-item"><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

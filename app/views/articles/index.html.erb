@@ -1,0 +1,30 @@
+<%= link_to 'Create an article', new_article_path, class:"btn btn-primary btn-lg",
+id:"create_button"%>
+
+<% @articles.each do |art| %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card text-center">
+        <div class="card-header">
+        <%= art.title.capitalize %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= art.description.capitalize %></h5>
+          <p class="card-text"><%= art.author.capitalize %></p>
+          <%= link_to 'Edit', edit_article_path(art), class:"btn btn-primary" %>
+          <%= link_to 'Show', article_path(art), class:"btn btn-info" %>
+          <%= link_to 'Delete',article_path(art), method: :delete,
+              data: {confirm: "Are you sure?"},  class:"btn btn-danger" %>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% end %>
