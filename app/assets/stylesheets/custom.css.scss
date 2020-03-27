@@ -1,12 +1,28 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 .navbar {
-
-background-color: #FDF6EB !important;
-color: green;
-
+  background-color: #ffdaa1; //!important;
+  position: fixed;
+  margin-bottom: 100px;
+  top: 0;
+  left:0;
+  right:0;
 }
 
+.cont_general {
+  margin-top: 100px;
+}
+
+.nav-link:hover {
+  background-color: #e3b39f;
+}
+
+
+.container-sm {
+  overflow: hidden !important;
+  position: fixed;
+  margin: 80px;
+}
 
 
 .navbar-brand {
@@ -14,28 +30,56 @@ font-size: 1rem;
 }
 
 .card-header {
-  background-color: #FDF6EB
+  background-color: #FDF6EB;
+}
+
+.cardcon-index {
+  margin-top: 15px;
+  margin-left: 310px;
 }
 
 #art_errors {
   margin-top: 20px;
 }
 
+.alert {
+  margin-top: 80px;
+}
+
 #create_button {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 520px;
+  color: white;
+  background-color: #ffdaa1;
+}
+
+#create_button:hover {
+  background-color: #73695a;
 }
 
 .jumbotron {
   background-color: #e3b39f;
-  margin: 20px;
+  margin: 80px;
 }
 
 
-.container {
+#container-id {
   margin:auto;
   margin-left: 330px;
-  margin-top: 20px
+  margin-top: 20px;
+  margin-top:10px;
 
+
+}
+
+.footer {
+  background-color: #ffdaa1;
+  height: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 
 }
