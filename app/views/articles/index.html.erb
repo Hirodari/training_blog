@@ -11,14 +11,15 @@ id:"create_button"%>
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= art.description.capitalize %></h5>
-          <p class="card-text"><%= art.author.capitalize %></p>
+          <small class="card-text">Created by: <%= art.user.username if art.user %></p>
           <%= link_to 'Edit', edit_article_path(art), class:"btn btn-primary" %>
           <%= link_to 'Show', article_path(art), class:"btn btn-info" %>
           <%= link_to 'Delete',article_path(art), method: :delete,
               data: {confirm: "Are you sure?"},  class:"btn btn-danger" %>
         </div>
         <div class="card-footer text-muted">
-          2 days ago
+          <%= time_ago_in_words(art.updated_at)%> ago, last updated:
+          <%= time_ago_in_words(art.updated_at)%>
         </div>
       </div>
     </div>
