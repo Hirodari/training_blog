@@ -1,12 +1,15 @@
 <%= link_to 'Create a user', new_user_path, class:"btn  btn-lg",
 id:"create_button"%>
+<div class="page">
+  <%= will_paginate %>
+</div>
 <% @users.each do |art| %>
   <div class="container cardcon-index" >
     <div class="row">
       <div class="col-sm-6">
         <div class="card text-center">
           <div class="card-header">
-            <%= art.username.capitalize %>
+            <%= link_to art.username.capitalize, user_path(art) %>
             </div>
             <div class="card-body">
               <h5 class="card-title"><%= art.email %></h5>
@@ -16,6 +19,7 @@ id:"create_button"%>
                   data: {confirm: "Are you sure?"},  class:"btn btn-danger" %>
             </div>
           <div class="card-footer text-muted">
+          <p>  <small><%= pluralize(art.article.count, "Article") if art.article %></small></p>
             <%= time_ago_in_words(art.updated_at)%> ago, last updated:
             <%= time_ago_in_words(art.updated_at)%>
           </div>
@@ -24,3 +28,6 @@ id:"create_button"%>
     </div>
   </div>
 <% end %>
+<div class="page">
+  <%= will_paginate %>
+</div>

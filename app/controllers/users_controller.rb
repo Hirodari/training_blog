@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /users/1
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    byebug
+    # byebug
     @user = User.new(user_params)
       if @user.save
         flash[:success] = "#{@user.username} was successfully created."
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
       #format.html { redirect_to users_url, danger: 'User was successfully destroyed.' }
       #format.json { head :no_content }
     redirect_to users_path
-    
+
   end
 
   private

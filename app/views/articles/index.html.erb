@@ -1,4 +1,9 @@
 <%= link_to 'Create an article', new_article_path, class:"btn  btn-lg",
 id:"create_button"%>
-
+<div class="page">
+  <%= will_paginate %>
+</div>
 <%= render 'shared/index_format', obj:@articles %>
+<div class="page">
+  <%= will_paginate %>
+</div>

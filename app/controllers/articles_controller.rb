@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 3)
   end
 
   def new
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    byebug
+    # byebug
     @article = Article.new(article_params)
     #@article = User.first
     if @article.save
