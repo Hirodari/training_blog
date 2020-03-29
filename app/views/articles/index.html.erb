@@ -1,31 +1,4 @@
 <%= link_to 'Create an article', new_article_path, class:"btn  btn-lg",
 id:"create_button"%>
 
-<% @articles.each do |art| %>
-<div class="container cardcon-index" >
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card text-center">
-        <div class="card-header">
-        <%= art.title.capitalize %>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= art.description.capitalize %></h5>
-          <small class="card-text">Created by: <%= art.user.username if art.user %></p>
-          <%= link_to 'Edit', edit_article_path(art), class:"btn btn-primary" %>
-          <%= link_to 'Show', article_path(art), class:"btn btn-info" %>
-          <%= link_to 'Delete',article_path(art), method: :delete,
-              data: {confirm: "Are you sure?"},  class:"btn btn-danger" %>
-        </div>
-        <div class="card-footer text-muted">
-          <%= time_ago_in_words(art.updated_at)%> ago, last updated:
-          <%= time_ago_in_words(art.updated_at)%>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<% end %>
+<%= render 'shared/index_format', obj:@articles %>

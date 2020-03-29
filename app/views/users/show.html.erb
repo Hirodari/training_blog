@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Username:</strong>
@@ -12,4 +12,18 @@
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->
+
+<div class="jumbotron">
+  <p><%= gravatar_for @user %></p>
+  <h1 class="display-4"><%= @user.username.capitalize %></h1>
+    <hr class="my-4">
+    <p class="lead"><%= render 'shared/index_format', obj:@user.article %></p>
+    <!-- <p class="lead"><%= @user.email %></p> -->
+  <hr class="my-4">
+  <!--<a class="btn btn-dark btn-lg" href="#" role="button">-->
+  <%= link_to 'Go back to Articles', users_path, class: 'btn btn-dark btn-lg'%></a>
+  <%= link_to 'Edit User', edit_user_path, class: 'btn btn-success btn-lg'%></a>
+  <%= link_to 'Delete User', user_path(@user), method: :delete,
+  data: {confirm: "are you sure?"},class: 'btn btn-danger btn-lg'%></a>
+</div>

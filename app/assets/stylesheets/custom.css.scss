@@ -3,14 +3,26 @@
 .navbar {
   background-color: #ffdaa1; //!important;
   position: fixed;
+  z-index:1;
   margin-bottom: 100px;
   top: 0;
   left:0;
   right:0;
 }
 
+.back {
+
+  background-color: #2c698f;
+  height: 500px;
+
+
+}
+
 .cont_general {
   margin-top: 100px;
+  /*border-style:dotted;*/
+  border-width: 5px;
+  border-color:blue;
 }
 
 .nav-link:hover {
@@ -38,14 +50,14 @@ font-size: 1rem;
   margin-left: 310px;
 }
 
-#art_errors {
-  margin-top: 20px;
-}
-
 .alert {
-  margin-top: 80px;
+  margin-top: 10px;
 }
-
+.art_errors {
+  margin-top: 5px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
 #create_button {
   margin-top: 50px;
   margin-left: 520px;

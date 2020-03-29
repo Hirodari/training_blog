@@ -1,18 +1,17 @@
-<%= link_to 'Create a user', new_user_path, class:"btn  btn-lg",
-id:"create_button"%>
-<% @users.each do |art| %>
+<% obj.each do |art| %>
   <div class="container cardcon-index" >
     <div class="row">
       <div class="col-sm-6">
         <div class="card text-center">
           <div class="card-header">
-            <%= art.username.capitalize %>
+            <%= art.title.capitalize %>
             </div>
             <div class="card-body">
-              <h5 class="card-title"><%= art.email %></h5>
-              <%= link_to 'Edit', edit_user_path(art), class:"btn btn-primary" %>
-              <%= link_to 'Show', user_path(art), class:"btn btn-info" %>
-              <%= link_to 'Delete',user_path(art), method: :delete,
+              <h5 class="card-title"><%= art.description.capitalize %></h5>
+              <small class="card-text">Created by: <%= art.user.username if art.user %></p>
+              <%= link_to 'Edit', edit_article_path(art), class:"btn btn-primary" %>
+              <%= link_to 'Show', article_path(art), class:"btn btn-info" %>
+              <%= link_to 'Delete',article_path(art), method: :delete,
                   data: {confirm: "Are you sure?"},  class:"btn btn-danger" %>
             </div>
           <div class="card-footer text-muted">
