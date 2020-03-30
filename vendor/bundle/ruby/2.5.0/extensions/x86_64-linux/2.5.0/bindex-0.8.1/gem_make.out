@@ -1,0 +1,15 @@
+current directory: /home/fredbitenyo/ruby_file/rails_project/training_blog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/home/fredbitenyo/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200330-15688-1oi99ln.rb extconf.rb
+creating Makefile
+
+current directory: /home/fredbitenyo/ruby_file/rails_project/training_blog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/fredbitenyo/ruby_file/rails_project/training_blog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/fredbitenyo/ruby_file/rails_project/training_blog/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200330-15688-1y6aqyl/skiptrace/internal
