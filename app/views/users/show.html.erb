@@ -23,7 +23,9 @@
   <hr class="my-4">
   <!--<a class="btn btn-dark btn-lg" href="#" role="button">-->
   <%= link_to 'Go back to users', users_path, class: 'btn btn-dark btn-lg'%></a>
-  <%= link_to 'Edit User', edit_user_path, class: 'btn btn-success btn-lg'%></a>
-  <%= link_to 'Delete User', user_path(@user), method: :delete,
-  data: {confirm: "are you sure?"},class: 'btn btn-danger btn-lg'%></a>
+  <% if logged_in? &&  (current_user == @user && current_user.admin?) %>
+    <%= link_to 'Edit User', edit_user_path, class: 'btn btn-success btn-lg'%></a>
+    <%= link_to 'Delete User', user_path(@user), method: :delete,
+    data: {confirm: "are you sure?"},class: 'btn btn-danger btn-lg'%></a>
+  <% end %>
 </div>
