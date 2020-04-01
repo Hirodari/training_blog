@@ -1,0 +1,18 @@
+<% @categories.each do |cat| %>
+  <div class="container cardcon-index" >
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            <%= cat.name.capitalize %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Nothing</h5>
+            </div>
+          <div class="card-footer text-muted">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
