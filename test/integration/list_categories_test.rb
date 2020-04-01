@@ -11,4 +11,11 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
     assert_template 'categories/index'
     assert_select 'div.card-header'
   end
+
+  test "redirect create category when not loggedin admin" do
+      assert_no_difference "Category.count" do
+        post categories_path, params: {category: {name: "sports"}}
+      end
+      assert_redirected_to categories_path
+  end
 end
