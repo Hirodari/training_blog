@@ -2,7 +2,13 @@ require 'test_helper'
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @user = User.create(username: "john", email: "john@gmail.com", password:"password",
+      admin: true)
+  end
+
   test "get new category form and create category" do
+    sign_in_as(@user, 'password')
     get new_category_path # this is the routing test
     #gem 'rails-controller-testing' should be install 'bundle install'
     assert_template 'categories/new' # this is checking if the template exist
@@ -16,6 +22,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
   end
 
   test "get invalid create category test" do
+    sign_in_as(@user, 'password')
     get new_category_path
     assert_template 'categories/new'
     assert_no_difference "Category.count" do
