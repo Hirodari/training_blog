@@ -10,7 +10,10 @@
             <%= cat.name.capitalize %>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Nothing</h5>
+              <% if logged_in? and current_user.admin? %>
+                <%= link_to 'Edit', edit_category_path(cat), class:"btn btn-primary"%>
+                <%= link_to 'Show', category_path(cat), class:"btn btn-success"%>
+              <% end %>
             </div>
           <div class="card-footer text-muted">
           </div>

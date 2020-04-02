@@ -8,10 +8,13 @@
             </div>
             <div class="card-body">
               <h5 class="card-title"><%= art.description.capitalize %></h5>
+              <% if art.categories.any? %>
+                <p><%= render art.categories %></p>
+              <% end %>
               <small class="card-text">Created by: <%= art.user.username if art.user %></p>
+                <%= link_to 'Show', article_path(art), class:"btn btn-info" %>
               <% if logged_in? && (current_user == art.user || current_user.admin?) %>
                 <%= link_to 'Edit', edit_article_path(art), class:"btn btn-primary" %>
-                <%= link_to 'Show', article_path(art), class:"btn btn-info" %>
                 <%= link_to 'Delete',article_path(art), method: :delete,
                     data: {confirm: "Are you sure?"},  class:"btn btn-danger" %>
               <% end %>

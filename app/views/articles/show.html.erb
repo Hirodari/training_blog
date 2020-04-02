@@ -2,7 +2,10 @@
   <h1 class="display-4"><%= @article.title.capitalize %></h1>
   <p class="lead"><%= @article.description.capitalize %></p>
   <hr class="my-4">
-  <p><%= @article.author.capitalize %></p>
+  <% if @article.categories.any?%>
+    <p> Categories: <%= render @article.categories %></p>
+  <% end %>
+  <p><%= @article.user.username.capitalize %></p>
   <!--<a class="btn btn-dark btn-lg" href="#" role="button">-->
   <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <%= link_to 'Go back to Articles', articles_path, class: 'btn btn-dark btn-lg'%></a>

@@ -1,0 +1,10 @@
+<%= render 'layouts/errors', obj:@category %>
+<%= form_with(model: @category, local: true) do |f|%>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <%= f.text_field :name, class:'form-control'%>
+    </div>
+      <%= f.submit "Edit Cat", class:"btn btn-info" %>
+  </form>
+<% end %>

@@ -61,8 +61,10 @@
             <%= "#{current_user.username }"%> Profile <%= "Admin" if current_user.admin? %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'View Profile', user_path(current_user), class:"dropdown-item"%>
+          <div class="dropdown-divider"></div>
             <%= link_to 'Edit Profile', edit_user_path(current_user), class:"dropdown-item"%>
-            <div class="dropdown-divider"></div>
+          <div class="dropdown-divider"></div>
             <%= link_to 'Log out', logout_path, method: :delete, class:"dropdown-item"%>
           </div>
         </li>
